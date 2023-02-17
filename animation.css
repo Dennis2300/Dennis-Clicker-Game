@@ -1,5 +1,5 @@
 .run {
-    animation: run 5s linear;
+    animation: run 15s linear;
     animation-iteration-count: infinite;
 }
 
@@ -13,9 +13,8 @@
 }
 
 .chase {
-    animation: chase 10s linear;
+    animation: chase 15s linear;
     animation-iteration-count: infinite;
-    animation-delay: 2s;
 }
 
 @keyframes chase{
@@ -23,7 +22,7 @@
         transform: translate(0%, 0%);
     }
     100% {
-        transform: translate(1000%, 0);
+        transform: translate(900%, 0);
     }
 }
 
