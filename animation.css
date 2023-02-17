@@ -1,0 +1,29 @@
+.run {
+    animation: run 5s linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes run {
+    0% {
+        transform: translate(0%, 0%);
+    }
+    100% {
+        transform: translate(1000%, 0);
+    }
+}
+
+.chase {
+    animation: chase 10s linear;
+    animation-iteration-count: infinite;
+    animation-delay: 2s;
+}
+
+@keyframes chase{
+    0% {
+        transform: translate(0%, 0%);
+    }
+    100% {
+        transform: translate(1000%, 0);
+    }
+}
+
