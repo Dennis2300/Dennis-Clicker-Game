@@ -1,28 +1,86 @@
-.run {
-    animation: run 15s linear;
+.run1 {
+    animation: huntress1 5s linear;
     animation-iteration-count: infinite;
 }
 
-@keyframes run {
+@keyframes huntress1 {
+    0% {
+        transform: translate(-300%, 0%);
+    }
+    100% {
+        transform: translate(1500%, 0%);
+    }
+}
+
+.run2 {
+    animation: warrior1 6s linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes warrior1 {
+    0% {
+        transform: translate(-300%, 0%);
+    }
+    100% {
+        transform: translate(1500%);
+    }
+}
+
+.run3 {
+    animation: warrior2 7s linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes warrior2 {
+    0% {
+        transform: translate(-300%, 0%);
+    }
+    100% {
+        transform: translate(1500%, 0%);
+    }
+}
+
+.chase1 {
+    animation: wizard1 12s linear;
+    animation-iteration-count: infinite;
+    animation-delay: 2s;
+}
+
+@keyframes wizard1 {
     0% {
         transform: translate(0%, 0%);
     }
     100% {
-        transform: translate(1000%, 0);
+        transform: translate(1500%, 0%);
     }
 }
 
-.chase {
-    animation: chase 15s linear;
+.chase2 {
+    animation: wizard2 25s linear;
     animation-iteration-count: infinite;
+    animation-delay: 2s;
 }
 
-@keyframes chase{
+@keyframes wizard2 {
     0% {
         transform: translate(0%, 0%);
     }
     100% {
-        transform: translate(900%, 0);
+        transform: translate(1500%, 0%);
     }
 }
 
+.chase3 {
+    animation: fireworm1 45s linear;
+    animation-iteration-count: infinite;
+    animation-delay: 2s;
+}
+
+@keyframes fireworm1 {
+    0% {
+        transform: translate(0%, 0%);
+    }
+    100% {
+        transform: translate(1500%, 0%);
+    }
+}
