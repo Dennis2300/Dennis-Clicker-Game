@@ -10,7 +10,6 @@ function start() {
 
     //Start animationerne
     document.querySelector("#warrior1_container").classList.add("run");
-    document.querySelector("#warrior2_container").classList.add("run");
 
     document.querySelector("#monster1_container").classList.add("chase");
     document.querySelector("#monster2_container").classList.add("chase");
