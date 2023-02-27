@@ -2,10 +2,6 @@ body {
     margin: 0;
 }
 
-img {
-    width: 100%;
-}
-
 #screen {
     position: relative;
     width: 100%;
@@ -13,94 +9,123 @@ img {
 }
 
 #game {
-    position: absolute;
     width: 100%;
     height: 100%;
+    position: absolute;
     top: 0%;
     left: 0%;
     overflow: hidden;
 }
 
-#game_background {
-    position: absolute;
+#start {
     width: 100%;
     height: 100%;
-    top: 0%;
-    left: 0%;
+    position: absolute;
+    background-size: cover;
+}
+
+#game_over {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-size: cover;
+}
+
+#level_complete {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-size: cover;
+}
+
+#game_background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
     background-image: url(trees/game_background_2.png);
     background-size: cover;
 }
 
 #game_elements {
-    position: absolute;
     width: 100%;
     height: 100%;
-    top: 0%;
-    left: 0%;
-}
-
-#warrior1_container {
     position: absolute;
-    top: 35%;
-    left: 0%;
-    width: 7.5%;
-    z-index: 96;
 }
 
-#warrior1_sprite {
+#game_ui {
     width: 100%;
     height: 100%;
+    position: absolute;
 }
 
-#monster1_container {
+/*containers here*/
+
+#mob1_container {
     position: absolute;
-    width: 13%;
-    top: 45%;
-    left: 0%;
-    z-index: 98;
+    scale: 220%;
 }
 
-#monster2_container {
-    position: absolute;
-    width: 15%;
-    scale: 225%;
-    top: 65%;
-    left: 10%;
-    z-index: 99;
+#mob1_sprite {
+    width: 100%;
 }
 
-#monster3_container {
+#mob2_container {
     position: absolute;
-    width: 15%;
-    top: 62%;
-    left: -2%;
-    z-index: 100;
+    scale: 210%;
 }
+
+#mob2_sprite {
+    width: 100%;
+}
+
+#mob3_container {
+    position: absolute;
+    scale: 250%;
+}
+
+#mob3_sprite {
+    width: 100%;
+}
+
+#human_container {
+    position: absolute;
+    scale: 290%;
+}
+
+#human_sprite {
+    width: 100%;
+}
+
+#potion_container {
+    position: absolute;
+    scale: 20%;
+}
+
+#potion_sprite {
+width: 100%;
+}
+
 
 #tree1_container {
-    z-index: 999;
     position: absolute;
-    width: 30%;
-    transform: translate(272%, 65%);
+    scale: 250%;
+    transform: translate(-10%, 80%);
+    z-index: 1000;
 }
 
-#tree2_container {
-    z-index: 1;
-    position: absolute;
-    width:50%;
-    transform: translate(148%,0%);
+/* start positioner*/
+.position1 {
+    top: 30%;
+}
+.position2 {
+    top: 45%;
+}
+.position3 {
+    top: 55%;
+}
+.position4 {
+    top: 70%;
 }
 
-#tree3_container {
-    z-index: 998;
-    position: absolute;
-    width: 30%;
-    transform: translate(-39%, 37%);
-}
 
-#tree4_container {
-    z-index: 2;
-    position: absolute;
-    width: 25%;
-    transform: translate(-15%, -16%);
-}
+

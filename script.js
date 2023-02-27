@@ -1,55 +1,76 @@
 "use strict";
+
 window.addEventListener("load", start);
 
-let points = 0
-let lives = 3
-
 function start() {
-    //Tjekker om JavaScript Kører
-    console.log("JavaScript kører!");
+  console.log("JavaScript is running!");
 
-    //Start animationerne
-    document.querySelector("#warrior1_container").classList.add("run");
+startAnimation()
+startPosition()
+registerClick()
 
-    document.querySelector("#monster1_container").classList.add("chase");
-    document.querySelector("#monster2_container").classList.add("chase");
-    document.querySelector("#monster3_container").classList.add("chase");
+document.querySelector("#mob1_container")
+.addEventListener("animationiteration", mobRestart)
+document.querySelector("#mob2_container")
+.addEventListener("animationiteration", mobRestart)
+document.querySelector("#mob3_container")
+.addEventListener("animationiteration", mobRestart)
+document.querySelector("#human_container")
+.addEventListener("animationiteration", mobRestart)
+}
 
-    //Registrer click
-    document.querySelector("#warrior1_container").addEventListener("click", clickVillager);
-  }
+function startAnimation() {
+  document.querySelector("#mob1_container").classList.add("run")
+  document.querySelector("#mob2_container").classList.add("run")
+  document.querySelector("#mob3_container").classList.add("run")
+  document.querySelector("#human_container").classList.add("run")
+}
 
-function clickVillager() {
-    console.log("Click Villager");
+function startPosition() {
+  document.querySelector("#mob1_container").classList.add("position1")
+  document.querySelector("#mob2_container").classList.add("position2")
+  document.querySelector("#mob3_container").classList.add("position3")
+  document.querySelector("#human_container").classList.add("position4")
+}
 
-    //Forhindrer i at clicke multiple time
-    document.querySelector("#warrior1_container").removeEventListener("click", clickVillager);
+function registerClick() {
+document.querySelector("#mob1_container").addEventListener("click", mobClicked);
+document.querySelector("#mob2_container").addEventListener("click", mobClicked);
+document.querySelector("#mob3_container").addEventListener("click", mobClicked);
+document.querySelector("#human_container").addEventListener("click", humanClicked);
+}
 
-    //pause animation
-    document.querySelector("#warrior1_container").classList.add("paused")
+function mobClicked() {
+  console.log("Mob clicked")
+  let mob = this;
+  mob.removeEventListener("click", mobClicked)
+  mob.classList.add("paused")
+  mob.querySelector("img").classList.add("zoom_out_spin")
+  mob.addEventListener("animationEnd", mobGone)
+}
 
-    //Forsvind animation
-    document.querySelector("#villager1_sprite").classList.add("zoom_out")
+function mobGone() {
+  let mob = this;
+  mob.removeEventListener("animationEnd", mobGone)
+  mob.querySelector("img").classList.remove("zoom_out_spin")
+  mob.classList.remove("paused")
+  mobRestart.call(this)
+  mob.addEventListener("click", mobClicked)
+}
 
-    //Kalder på en function der vil genstarte hele processen
-    document.querySelector("#warrior1_container").addEventListener("animationend", villagerGone)
+function mobRestart() {
+  let mob = this;
+  mob.classList.remove("run")
+  mob.offsetwidth;
+  mob.classList.add("run")
+  mob.classList
+  .remove("position1", "position2", "position3", "position4")
 
-  }
+  let pos = Math.floor(Math.random()*4)+1;
+  mob.classList.add("position" + pos)
 
-  function villagerGone() {
-    //fjerne linjen der bringer os ind
-    document.querySelector("#warrior1_container").removeEventListener("animationend", villagerGone)
+}
 
-    //fjerner forsvind animationen
-    document.querySelector("#villager1_sprite").classList.remove("zoom_out")
-
-    //fjerner pause tilstanden
-    document.querySelector("#warrior1_container").classList.remove("paused");
-
-    //genstart animation
-    document.querySelector("#warrior1_container").classList.remove("run");
-    document.querySelector("#warrior1_container").offsetWidth;
-    document.querySelector("#warrior1_container").classList.add("run");
-
-
-  }
+function humanClicked() {
+  console.log("Human clicked");
+}
