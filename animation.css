@@ -53,6 +53,7 @@
 .falling {
     animation-name: falling;
     animation-duration: 5s;
+    animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-fill-mode: forwards;
 }
@@ -63,5 +64,20 @@
     }
     to {
         transform: translate(0%, 1500%);
+    }
+}
+
+.zoom_out {
+    animation-name: zoom_out;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes zoom_out {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
     }
 }

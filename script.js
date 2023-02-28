@@ -18,6 +18,9 @@ document.querySelector("#mob3_container")
 .addEventListener("animationiteration", mobRestart)
 document.querySelector("#human_container")
 .addEventListener("animationiteration", mobRestart)
+document.querySelector("#potion_container")
+.addEventListener("animationiteration", potionRestart)
+
 }
 
 function startAnimation() {
@@ -43,6 +46,7 @@ document.querySelector("#mob1_container").addEventListener("click", mobClicked);
 document.querySelector("#mob2_container").addEventListener("click", mobClicked);
 document.querySelector("#mob3_container").addEventListener("click", mobClicked);
 document.querySelector("#human_container").addEventListener("click", humanClicked);
+document.querySelector("#potion_container").addEventListener("click", potionClicked);
 }
 
 //JS for enemies
@@ -114,5 +118,34 @@ function humanRestart() {
 
 //JS for health potion
 function potionClicked() {
+console.log("Potion clicked");
 
+let potion = this
+potion.removeEventListener("click", potionClicked)
+potion.classList.add("paused")
+potion.querySelector("img").classList.add("zoom_out")
+potion.addEventListener("animationend", potionGone)
+}
+
+function potionGone() {
+  let potion = this;
+
+  potion.removeEventListener("animationend", potionGone)
+  potion.querySelector("img").classList.remove("zoom_out")
+  potion.classList.remove("paused")
+  potionRestart.call(this)
+  potion.addEventListener("click", potionClicked)
+}
+
+function potionRestart() { 
+  let potion = this;
+
+  potion.classList.remove("falling");
+  potion.offsetWidth;
+  potion.classList.add("falling");
+  potion.classList
+  .remove("potion_position1", "potion_position2", "potion_position3", "potion_position4", "potion_position5", "potion_position6", "potion_position7", "potion_position8");
+
+  let pos = Math.floor(Math.random()*8)+1;
+  potion.classList.add("potion_position" + pos)
 }
