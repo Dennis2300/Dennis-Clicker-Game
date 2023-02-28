@@ -62,7 +62,7 @@ body {
 
 #mob1_container {
     position: absolute;
-    scale: 220%;
+    scale: 300%;
 }
 
 #mob1_sprite {
@@ -71,7 +71,7 @@ body {
 
 #mob2_container {
     position: absolute;
-    scale: 210%;
+    scale: 300%;
 }
 
 #mob2_sprite {
@@ -80,7 +80,7 @@ body {
 
 #mob3_container {
     position: absolute;
-    scale: 250%;
+    scale: 350%;
 }
 
 #mob3_sprite {
@@ -89,7 +89,7 @@ body {
 
 #human_container {
     position: absolute;
-    scale: 290%;
+    scale: 375%;
 }
 
 #human_sprite {
@@ -99,6 +99,7 @@ body {
 #potion_container {
     position: absolute;
     scale: 20%;
+    top: -25%;
 }
 
 #potion_sprite {
@@ -113,7 +114,41 @@ width: 100%;
     z-index: 1000;
 }
 
-/* start positioner*/
+/*start positioner for health potion*/
+.potion_position1 {
+    top: 0%;
+    left: 10%;
+}
+.potion_position2 {
+    top: 0%;
+    left: 20%;
+}
+.potion_position3 {
+    top: 0%;
+    left: 30%;
+}
+.potion_position4 {
+    top: 0%;
+    left: 40%;
+}
+.potion_position5 {
+    top: 0%;
+    left: 50%;
+}
+.potion_position6 {
+    top: 0%;
+    left: 60%;
+}
+.potion_position7 {
+    top: 0%;
+    left: 70%;
+}
+.potion_position8 {
+    top: 0%;
+    left: 80%;
+}
+
+/* start positioner for characters*/
 .position1 {
     top: 30%;
 }
@@ -127,5 +162,8 @@ width: 100%;
     top: 70%;
 }
 
+.paused {
+    animation-play-state: paused;
+}
 
 

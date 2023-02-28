@@ -1,14 +1,14 @@
 
 .run {
     animation-name: run;
-    animation-duration: 5s;
+    animation-duration: 10s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
 }
 
 @keyframes run {
     from {
-        transform: translate(0%, 0%);
+        transform: translate(-50%, 0%);
     }
     to {
         transform: translate(50vw, 0vw);
@@ -33,6 +33,35 @@
     }
 }
 
-.paused {
-    animation-play-state: paused;
+.fly_heaven {
+    animation: fly_heaven;
+    animation-duration: 5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fly_heaven {
+    from {
+        transform: translate(0%, 0%);
+    }
+    to {
+        transform: translate(0%, -500%);
+    }
+
+}
+
+.falling {
+    animation-name: falling;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+}
+
+@keyframes falling {
+    from {
+        transform: translate(0%, 0%);
+    }
+    to {
+        transform: translate(0%, 1500%);
+    }
 }
