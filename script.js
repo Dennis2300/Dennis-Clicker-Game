@@ -2,8 +2,14 @@
 
 window.addEventListener("load", start);
 
+let lives = 0
+let points = 0
+
 function start() {
   console.log("JavaScript is running!");
+
+  points = 0
+  lives = 5
 
 startAnimation()
 startPosition()
@@ -58,6 +64,8 @@ function mobClicked() {
   mob.classList.add("paused")
   mob.querySelector("img").classList.add("zoom_out_spin")
   mob.addEventListener("animationend", mobGone);
+
+  increasePoint()
 }
 function mobGone() {
 
@@ -92,6 +100,8 @@ function humanClicked() {
   human.classList.add("paused")
   human.querySelector("img").classList.add("fly_heaven")
   human.addEventListener("animationend", humanGone)
+
+  decreaseLives()
 }
 function humanGone() {
   let human = this;
@@ -125,6 +135,8 @@ potion.removeEventListener("click", potionClicked)
 potion.classList.add("paused")
 potion.querySelector("img").classList.add("zoom_out")
 potion.addEventListener("animationend", potionGone)
+
+increaseLives()
 }
 
 function potionGone() {
@@ -148,4 +160,36 @@ function potionRestart() {
 
   let pos = Math.floor(Math.random()*8)+1;
   potion.classList.add("potion_position" + pos)
+}
+
+//Increase point & hvis kill count funktioner
+function increasePoint() {
+  console.log("Point Gained!");
+  points++;
+  console.log("Du har nu " + points + " points");
+  displayPoints()
+}
+
+function displayPoints() {
+  document.querySelector("#kill_count").textContent = points;
+}
+
+//Decrease liv funktioner
+function decreaseLives() {
+  showDecreasedLives()
+  lives--;
+}
+function showDecreasedLives() {
+  document.querySelector("#heart" + lives).classList.remove("active_heart");
+  document.querySelector("#heart" + lives).classList.add("broken_heart");
+}
+
+//Increase liv funktioner
+function increaseLives() {
+  lives++;
+showIncreasedLives()
+}
+function showIncreasedLives() {
+  document.querySelector("#heart" + lives).classList.remove("broken_heart");
+  document.querySelector("#heart" + lives).classList.add("active_heart");
 }

@@ -37,6 +37,7 @@
     animation: fly_heaven;
     animation-duration: 5s;
     animation-iteration-count: 1;
+    animation-timing-function: linear;
     animation-fill-mode: forwards;
 }
 
@@ -45,7 +46,7 @@
         transform: translate(0%, 0%);
     }
     to {
-        transform: translate(0%, -500%);
+        transform: translate(0%, -800%);
     }
 
 }

@@ -52,10 +52,42 @@ body {
     position: absolute;
 }
 
+#score_board {
+    text-align: right;
+}
+
 #game_ui {
-    width: 100%;
-    height: 100%;
     position: absolute;
+    top: 2vw;
+    right: 1vw;
+    color: white;
+
+    font-size: 2em;
+
+    pointer-events: none;
+}
+
+#kill_count {
+    white-space: nowrap;
+    text-align: right;
+}
+
+#life_board {
+    margin-block-start: 0.2em;
+    display: grid;
+    grid-template-columns: 2em 2em 2em 2em 2em;
+}
+
+#life_board img {
+    width: 100%;
+}
+
+.active_heart {
+    filter: drop-shadow(0 0 2px rgb(93, 93, 90));
+}
+
+.broken_heart {
+    filter: grayscale(75%) blur(0.5px);
 }
 
 /*containers here*/
@@ -112,6 +144,12 @@ width: 100%;
     scale: 250%;
     transform: translate(-10%, 80%);
     z-index: 1000;
+}
+
+.hidden,
+#game_over.hidden,
+#level_complete.hidden {
+    display: none;
 }
 
 /*start positioner for health potion*/

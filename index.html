@@ -1,17 +1,18 @@
 <head>
-    <meta name="viewport" content="width=device-width">
-    <meta name="description" content="Clicker-Game">
-    <meta name="author" content="Dennis">
-    <meta charset="UTF-8">
-    <title>Clicker Game - Hero of the village</title>
-    <link rel="stylesheet" href="animation.css">
-    <link rel="stylesheet" href="layout.css">
+   <meta name="viewport" content="width=device-width">
+   <meta name="description" content="Clicker-Game">
+   <meta name="author" content="Dennis">
+   <meta charset="UTF-8">
+   <title>Clicker Game - Hero of the village</title>
+   <link rel="stylesheet" href="animation.css">
+   <link rel="stylesheet" href="layout.css">
 </head>
 
 <body>
    <div id="screen">
       <div id="game">
          <div id="game_background"></div>
+         <!--Game characters & elements-->
          <div id="game_elements">
             <div id="mob1_container">
                <img id="mob1_sprite" src="mobs/wizard1.gif" alt="wizard">
@@ -35,20 +36,29 @@
             <div id="tree1_container">
                <img src="trees/middle_lane_tree3.png" alt="">
             </div>
-
-            <!--
-               <div id="game_ui">
-                  <img id="time_board" src="" alt="">
-                  <img id="score_board" src="" alt="">
-                  <img id="heart_board" src="" alt="">
-               </div>
-               
+         </div>
+         <!--Game User Interface-->
+         <div id="game_ui">
+            <div id="score_board">
+               <span id="kill_count">0</span>
+               <img id="kill_img" src="UI/shield_red_blue.png">
             </div>
+
+            <div id="life_board">
+               <img id="heart1" src="UI/heart.png" class="active_heart">
+               <img id="heart2" src="UI/heart.png" class="active_heart">
+               <img id="heart3" src="UI/heart.png" class="active_heart">
+               <img id="heart4" src="UI/heart.png" class="active_heart">
+               <img id="heart5" src="UI/heart.png" class="active_heart">
+            </div>
+
          </div>
-         <div id="start"></div>
-         <div id="game_over"></div>
-         <div id="level_complete"></div>-->
-         </div>
+
       </div>
-      <script src="script.js"></script>
+      <div id="start" class="hidden"></div>
+      <div id="game_over" class="hidden"></div>
+      <div id="level_complete" class="hidden"></div>
+   </div>
+   </div>
+   <script src="script.js"></script>
 </body>
