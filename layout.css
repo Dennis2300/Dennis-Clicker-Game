@@ -70,6 +70,9 @@ body {
 #kill_count {
     white-space: nowrap;
     text-align: right;
+    font-size: 2em;
+    font-family: 'Press Start 2P', cursive;
+    color:white;
 }
 
 #life_board {
@@ -82,13 +85,6 @@ body {
     width: 100%;
 }
 
-.active_heart {
-    filter: drop-shadow(0 0 2px rgb(93, 93, 90));
-}
-
-.broken_heart {
-    filter: grayscale(75%) blur(0.5px);
-}
 
 /*containers here*/
 
@@ -146,62 +142,18 @@ width: 100%;
     z-index: 1000;
 }
 
+#tree2_container {
+    position: absolute;
+    scale: 275%;
+    transform: translate(310%, 105%);
+    z-index: 999;
+}
+
 .hidden,
 #game_over.hidden,
 #level_complete.hidden {
     display: none;
 }
 
-/*start positioner for health potion*/
-.potion_position1 {
-    top: 0%;
-    left: 10%;
-}
-.potion_position2 {
-    top: 0%;
-    left: 20%;
-}
-.potion_position3 {
-    top: 0%;
-    left: 30%;
-}
-.potion_position4 {
-    top: 0%;
-    left: 40%;
-}
-.potion_position5 {
-    top: 0%;
-    left: 50%;
-}
-.potion_position6 {
-    top: 0%;
-    left: 60%;
-}
-.potion_position7 {
-    top: 0%;
-    left: 70%;
-}
-.potion_position8 {
-    top: 0%;
-    left: 80%;
-}
-
-/* start positioner for characters*/
-.position1 {
-    top: 30%;
-}
-.position2 {
-    top: 45%;
-}
-.position3 {
-    top: 55%;
-}
-.position4 {
-    top: 70%;
-}
-
-.paused {
-    animation-play-state: paused;
-}
 
 

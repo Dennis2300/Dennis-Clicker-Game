@@ -16,6 +16,7 @@ startPosition()
 startPositionPotion()
 registerClick()
 
+//Skifter position når de er ude af skærmen
 document.querySelector("#mob1_container")
 .addEventListener("animationiteration", mobRestart)
 document.querySelector("#mob2_container")
@@ -26,6 +27,14 @@ document.querySelector("#human_container")
 .addEventListener("animationiteration", mobRestart)
 document.querySelector("#potion_container")
 .addEventListener("animationiteration", potionRestart)
+
+//Mister et liv, da de ikke bliver clicked på, og når landsbyen
+document.querySelector("#mob1_container")
+.addEventListener("animationiteration", decreaseLives)
+document.querySelector("#mob2_container")
+.addEventListener("animationiteration", decreaseLives)
+document.querySelector("#mob3_container")
+.addEventListener("animationiteration", decreaseLives)
 
 }
 

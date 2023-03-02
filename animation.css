@@ -1,7 +1,7 @@
 
 .run {
     animation-name: run;
-    animation-duration: 10s;
+    animation-duration: 7s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
 }
@@ -11,7 +11,7 @@
         transform: translate(-50%, 0%);
     }
     to {
-        transform: translate(50vw, 0vw);
+        transform: translate(40vw, 0vw);
     }
 }
 
@@ -81,4 +81,66 @@
     100% {
         transform: scale(0);
     }
+}
+
+
+/*start positioner for health potion*/
+.potion_position1 {
+    top: 0%;
+    left: 10%;
+}
+.potion_position2 {
+    top: 0%;
+    left: 20%;
+}
+.potion_position3 {
+    top: 0%;
+    left: 30%;
+}
+.potion_position4 {
+    top: 0%;
+    left: 40%;
+}
+.potion_position5 {
+    top: 0%;
+    left: 50%;
+}
+.potion_position6 {
+    top: 0%;
+    left: 60%;
+}
+.potion_position7 {
+    top: 0%;
+    left: 70%;
+}
+.potion_position8 {
+    top: 0%;
+    left: 80%;
+}
+
+/* start positioner for characters*/
+.position1 {
+    top: 30%;
+}
+.position2 {
+    top: 45%;
+}
+.position3 {
+    top: 55%;
+}
+.position4 {
+    top: 70%;
+}
+
+.paused {
+    animation-play-state: paused;
+}
+
+/*Liv animationer*/
+.active_heart {
+    filter: drop-shadow(0 0 2px rgb(93, 93, 90));
+}
+
+.broken_heart {
+    filter: grayscale(75%) blur(0.5px);
 }
