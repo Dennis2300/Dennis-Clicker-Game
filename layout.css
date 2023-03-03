@@ -24,19 +24,46 @@ body {
     background-image: url(trees/game_background_2.png);
     background-size: cover;
     text-align: center;
-    overflow: hidden
+    background-repeat: no-repeat;
 }
 
-#main_menu_container {
-    scale: 50%;
-    width: 50%;
-    height: 150%;
-    transform: translate(100%, -35%);
+#main_menu {
+    position: absolute;
+    scale: 150%;
+    transform: translate(28vw, 10vw);
 }
 
-#main_menu_sprite {
-    height: 100%;
-    width: 100%;
+h2 {
+    position: absolute;
+    color: white;
+    top: 3%;
+    left: 12%;
+}
+h3 {
+    position: absolute;
+    color: white;
+    top: 25%;
+    left: 28%;
+}
+p {
+    position: absolute;
+    color: white;
+    top: 12%;
+    left: 12%;
+}
+
+#menu_img {
+    position:absolute;
+    scale: 250%;
+    top: 57%;
+    right: 39%;
+}
+
+#btn_start {
+    position: absolute;
+    top: 85%;
+    right: 41%;
+    scale: 175%;
 }
 
 #game_over {
@@ -152,15 +179,15 @@ width: 100%;
 
 #tree1_container {
     position: absolute;
-    scale: 250%;
-    transform: translate(-10%, 80%);
+    scale: 275%;
+    transform: translate(-10%, 95%);
     z-index: 1000;
 }
 
 #tree2_container {
     position: absolute;
     scale: 275%;
-    transform: translate(310%, 105%);
+    transform: translate(355%, 135%);
     z-index: 999;
 }
 
