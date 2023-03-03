@@ -151,7 +151,7 @@ function humanClicked() {
   human.querySelector("img").classList.add("fly_heaven")
   human.addEventListener("animationend", humanGone)
     
-  document.querySelector("#sound_hit_human").volume = 0.5
+  document.querySelector("#sound_hit_human").volume = 1
   document.querySelector("#sound_hit_human").play()
   document.querySelector("#sound_hit_human").currentTime = 0
 
