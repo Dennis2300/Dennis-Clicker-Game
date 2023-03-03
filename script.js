@@ -8,17 +8,27 @@ let points = 0
 function ready() {
 console.log("Main Menu");
 document.querySelector("#btn_start").addEventListener("click", start);
+document.querySelector("#level_complete_btn").addEventListener("click", showStartScreen);
+document.querySelector("#btn_restart").addEventListener("click", showStartScreen);
+}
 
+function showStartScreen() {
+  document.querySelector("#start").classList.remove("hidden");
+  document.querySelector("#game_over").classList.add("hidden");
+  document.querySelector("#level_complete").classList.add("hidden");
 }
 
 function start() {
   console.log("Game is running");
-
   document.querySelector("#start").classList.add("hidden");
 
-  points = 0
-  lives = 5
 
+  document.querySelector("#sound_game").volume = 0.5
+  document.querySelector("#sound_game").play()
+
+resetPoints()
+resetLives()
+showGameScreen()
 startAnimation()
 startPosition()
 startPositionPotion()
@@ -35,15 +45,34 @@ document.querySelector("#human_container")
 .addEventListener("animationiteration", mobRestart)
 document.querySelector("#potion_container")
 .addEventListener("animationiteration", potionRestart)
+}
 
-//Mister et liv, da de ikke bliver clicked på, og når landsbyen
-document.querySelector("#mob1_container")
-.addEventListener("animationiteration", decreaseLives)
-document.querySelector("#mob2_container")
-.addEventListener("animationiteration", decreaseLives)
-document.querySelector("#mob3_container")
-.addEventListener("animationiteration", decreaseLives)
+function resetPoints() {
+  points = 0
+  displayPoints()
+}
 
+function resetLives() {
+  lives = 5
+  //fjerner alle hearts
+  document.querySelector("#heart1").classList.remove("broken_heart");
+  document.querySelector("#heart2").classList.remove("broken_heart");
+  document.querySelector("#heart3").classList.remove("broken_heart");
+  document.querySelector("#heart4").classList.remove("broken_heart");
+  document.querySelector("#heart5").classList.remove("broken_heart");
+  //tilføjer alle hearts
+  document.querySelector("#heart1").classList.add("active_heart");
+  document.querySelector("#heart2").classList.add("active_heart");
+  document.querySelector("#heart3").classList.add("active_heart");
+  document.querySelector("#heart4").classList.add("active_heart");
+  document.querySelector("#heart5").classList.add("active_heart");
+
+}
+
+function showGameScreen() {
+  document.querySelector("#start").classList.add("hidden");
+  document.querySelector("#game_over").classList.add("hidden");
+  document.querySelector("#level_complete").classList.add("hidden");
 }
 
 function startAnimation() {
@@ -82,6 +111,10 @@ function mobClicked() {
   mob.querySelector("img").classList.add("zoom_out_spin")
   mob.addEventListener("animationend", mobGone);
 
+  document.querySelector("#sound_hit_mobs").volume = 0.5
+  document.querySelector("#sound_hit_mobs").play()
+  document.querySelector("#sound_hit_mobs").currentTime = 0
+
   increasePoint()
 }
 function mobGone() {
@@ -117,6 +150,10 @@ function humanClicked() {
   human.classList.add("paused")
   human.querySelector("img").classList.add("fly_heaven")
   human.addEventListener("animationend", humanGone)
+    
+  document.querySelector("#sound_hit_human").volume = 0.5
+  document.querySelector("#sound_hit_human").play()
+  document.querySelector("#sound_hit_human").currentTime = 0
 
   decreaseLives()
 }
@@ -153,6 +190,10 @@ potion.classList.add("paused")
 potion.querySelector("img").classList.add("zoom_out")
 potion.addEventListener("animationend", potionGone)
 
+document.querySelector("#sound_potion").volume = 0.5
+document.querySelector("#sound_potion").play()
+document.querySelector("#sound_potion").currentTime = 0
+
 increaseLives()
 }
 
@@ -183,8 +224,12 @@ function potionRestart() {
 function increasePoint() {
   console.log("Point Gained!");
   points++;
-  console.log("Du har nu " + points + " points");
   displayPoints()
+
+  if (points >= 10) {
+    levelComplete();
+}
+
 }
 
 function displayPoints() {
@@ -194,6 +239,11 @@ function displayPoints() {
 //Decrease liv funktioner
 function decreaseLives() {
   showDecreasedLives()
+
+  if (lives <= 1) {
+    gameOver()
+  }
+
   lives--;
 }
 function showDecreasedLives() {
@@ -209,4 +259,48 @@ showIncreasedLives()
 function showIncreasedLives() {
   document.querySelector("#heart" + lives).classList.remove("broken_heart");
   document.querySelector("#heart" + lives).classList.add("active_heart");
+}
+
+//Game Over Screen
+function gameOver() {
+  console.log("Game Over!");
+  document.querySelector("#game_over").classList.remove("hidden");
+
+  
+  document.querySelector("#sound_gameOver").volume = 0.5
+  document.querySelector("#sound_gameOver").play()
+  document.querySelector("#sound_gameOver").currentTime = 0
+
+stopGame()
+
+}
+
+//Level Complete
+function levelComplete() {
+  console.log("Level Complete");
+  document.querySelector("#level_complete").classList.remove("hidden");
+
+  document.querySelector("#sound_lvl_complete").play()
+
+  stopGame()
+}
+
+function stopGame() {
+  document.querySelector("#mob1_container").classList.remove("run")
+  document.querySelector("#mob2_container").classList.remove("run")
+  document.querySelector("#mob3_container").classList.remove("run")
+  document.querySelector("#human_container").classList.remove("run")
+  document.querySelector("#potion_container").classList.remove("run")
+
+  document.querySelector("#mob1_container").removeEventListener("click", mobClicked)
+  document.querySelector("#mob2_container").removeEventListener("click", mobClicked)
+  document.querySelector("#mob3_container").removeEventListener("click", mobClicked)
+  document.querySelector("#human_container").removeEventListener("click", humanClicked);
+  document.querySelector("#potion_container").removeEventListener("click", potionClicked);
+
+  document.querySelector("#sound_game").pause()
+
+  document.querySelector("#sound_hit_human").pause()
+  document.querySelector("#sound_hit_mobs").pause()
+  document.querySelector("#sound_potion").pause()
 }

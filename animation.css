@@ -11,7 +11,7 @@
         transform: translate(-50%, 0%);
     }
     to {
-        transform: translate(40vw, 0vw);
+        transform: translate(50vw, 0vw);
     }
 }
 
@@ -64,7 +64,7 @@
         transform: translate(0%, 0%);
     }
     to {
-        transform: translate(0%, 1500%);
+        transform: translate(0%, 1700%);
     }
 }
 
@@ -83,6 +83,21 @@
     }
 }
 
+.pulse {
+    animation: pulse 1s linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.8);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
 
 /*start positioner for health potion*/
 .potion_position1 {
