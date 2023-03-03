@@ -1,12 +1,20 @@
 "use strict";
 
-window.addEventListener("load", start);
+window.addEventListener("load", ready);
 
 let lives = 0
 let points = 0
 
+function ready() {
+console.log("Main Menu");
+document.querySelector("#btn_start").addEventListener("click", start);
+
+}
+
 function start() {
-  console.log("JavaScript is running!");
+  console.log("Game is running");
+
+  document.querySelector("#start").classList.add("hidden");
 
   points = 0
   lives = 5
