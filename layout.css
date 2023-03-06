@@ -29,48 +29,79 @@ body {
 
 #main_menu {
     position: absolute;
-    scale: 150%;
-    transform: translate(28vw, 10vw);
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    scale: 250%;
+    transform: translate(0vw, 20vw);
 }
 
 h2 {
     position: absolute;
     color: f7f0d1;
-    top: 1%;
-    left: 11%;
-    font-size: 2em;
-    font-family: 'Caveat', cursive;
+    top: -1.5%;
+    left: 38.5%;
+    font-size: 2.7em;
+    font-family: 'Rampart One', cursive;
 }
 h3 {
     position: absolute;
     color: f7f0d1;
-    scale: 120%;
-    top: 25%;
-    left: 33%;
+    font-size: 0.9em;
+    top: 14%;
+    left: 42.5%;
     font-family: 'Caveat', cursive;
 }
+h6 {
+    position: absolute;
+    color: f7f0d1;
+    scale: 120%;
+    top: 13.5%;
+    right: 41.6%;
+    font-family: 'Caveat', cursive;
+}
+
 #para1 {
     position: absolute;
     color: f7f0d1;
-    top: 12%;
-    left: 13%;
-    font-family: 'Acme', sans-serif;
-}
+    top: 18%;
+    right: 41.2%;
+    font-size: 0.9em;
+    font-family: 'Russo One', sans-serif;}
 
-#menu_img {
+#menu1_img {
     position:absolute;
-    scale: 250%;
-    top: 57%;
-    right: 38%;
+    top: 8%;
+    right: 57%;
+    scale: 120%;
+}
+#menu2_img {
+    position:absolute;
+    top: 9.3%;
+    right: 54%;
+    scale: 100%;
+}
+#menu3_img {
+    position:absolute;
+    top: 10%;
+    right: 52%;
+    scale: 100%;
+}
+#menu4_img {
+    position:absolute;
+    top: 11%;
+    right: 42%;
+    scale: 150%;
 }
 
 #btn_start {
     position: absolute;
-    top: 85%;
-    right: 27%;
+    top: 23.5%;
+    right: 47%;
     background-color: f7f0d1;
     padding: 10px 40px;
     border-radius: 8px;
+    font-family: 'Russo One', sans-serif;
 }
 
 #game_background {
@@ -105,7 +136,7 @@ h3 {
 #kill_count {
     white-space: nowrap;
     text-align: right;
-    font-size: 2em;
+    font-size: 2.5em;
     font-family: 'Press Start 2P', cursive;
     color:white;
 }
@@ -137,19 +168,20 @@ h3 {
 h5 {
     position: absolute;
     font-size: 3em;
-    top: -15%;
-    left: 21%;
-    font-family: 'Acme', sans-serif;
-
+    top: -20%;
+    left: 13%;
+    font-family: 'Rampart One', cursive;
+    color: f7f0d1;
 }
 
 #para3 {
     position: absolute;
-    font-size: 2em;
+    font-size: 1.5em;
     text-align: center;
     top: 20%;
-    left: 15%;
-    font-family: 'Caveat', cursive;
+    left: 10%;
+    font-family: 'Russo One', sans-serif;
+    color: f7f0d1;
 
 }
 
@@ -178,20 +210,21 @@ h5 {
 
 h4 {
     position: absolute;
-    font-size: 5em;
-    top: -27%;
-    left: 23%;
-    font-family: 'Caveat', cursive;
-
+    font-size: 3.5em;
+    top: -15%;
+    left: 19.5%;
+    font-family: 'Rampart One', cursive;
+    color: f7f0d1;
 }
 
 #para2 {
     position: absolute;
     font-size: 2em;
     text-align: center;
-    top: 27%;
-    left: 22%;
-    font-family: 'Acme', sans-serif;
+    top: 28%;
+    left: 25%;
+    font-family: 'Russo One', sans-serif;
+    color: f7f0d1;
 
 }
 

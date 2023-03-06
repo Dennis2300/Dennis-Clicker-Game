@@ -9,15 +9,7 @@
 <!-- Google Font Link -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rampart+One&family=Russo+One&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -71,18 +63,17 @@
       <!-- Main Menu -->
       <div id="start">
          <div id="main_menu">
-            <img id="main_menu_sprite" src="UI/MainMenu.png" alt="Main Menu">
+            <img id="main_menu_sprite" src="UI/GameOver.png" alt="Main Menu">
             <h2>Hero Of The Village</h2>
-            <p id="para1">Kill all the wizards & worms<br>
-               before they reach the village<br>
-               <br>
-               <br>
-               <br>
-               There are some villagers<br>
-                trying to run back to the village</p>
-            <h3>BE CAREFUL!</h3>
+            <p id="para1">Kill all the wizards before they reach the village! <br>
+            Altough try not to kill the retreating villagers!</p>
+            <h3>Mobs</h3>
+            <h6>Friendly</h6>
 
-            <img id="menu_img" src="UI/shield_red_blue.png" alt="">
+            <img id="menu1_img" src="mobs/wizard1.gif" alt="">
+            <img id="menu2_img" src="mobs/wizard2.gif" alt="">
+            <img id="menu3_img" src="mobs/fireworm1.gif" alt="">
+            <img id="menu4_img" src="villagers/warrior-1.gif" alt="">
                
                <button id="btn_start" class="pulse">START</button>
             </div>
@@ -93,7 +84,7 @@
             <h4>Game Over!</h4>
             <p id="para2">
                You failed! <br>
-               The whole village is dead
+               What a disgrace!
             </p>
             <button id="btn_restart" class="pulse">Main Menu</button>
          </div>
@@ -103,7 +94,9 @@
             <img id="level_complete_sprite" src="UI/GameOver.png" alt="">
             <h5>Level complete!</h4>
             <p id="para3">
-               You succesfully protected the village <br>
+               You succesfully protected the village
+               <br>
+               <br>
                You have become the <br> "Hero Of The Village"
             </p>
             <button id="level_complete_btn" class="pulse">Main Menu</button>
