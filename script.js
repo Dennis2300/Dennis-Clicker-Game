@@ -6,10 +6,10 @@ let lives = 0
 let points = 0
 
 function ready() {
-console.log("Main Menu");
-document.querySelector("#btn_start").addEventListener("click", start);
-document.querySelector("#level_complete_btn").addEventListener("click", showStartScreen);
-document.querySelector("#btn_restart").addEventListener("click", showStartScreen);
+  console.log("Main Menu");
+  document.querySelector("#btn_start").addEventListener("click", start);
+  document.querySelector("#level_complete_btn").addEventListener("click", showStartScreen);
+  document.querySelector("#btn_restart").addEventListener("click", showStartScreen);
 }
 
 function showStartScreen() {
@@ -26,25 +26,25 @@ function start() {
   document.querySelector("#sound_game").volume = 0.5
   document.querySelector("#sound_game").play()
 
-resetPoints()
-resetLives()
-showGameScreen()
-startAnimation()
-startPosition()
-startPositionPotion()
-registerClick()
+  resetPoints()
+  resetLives()
+  showGameScreen()
+  startAnimation()
+  startPosition()
+  startPositionPotion()
+  registerClick()
 
-//Skifter position når de er ude af skærmen
-document.querySelector("#mob1_container")
-.addEventListener("animationiteration", mobRestart)
-document.querySelector("#mob2_container")
-.addEventListener("animationiteration", mobRestart)
-document.querySelector("#mob3_container")
-.addEventListener("animationiteration", mobRestart)
-document.querySelector("#human_container")
-.addEventListener("animationiteration", mobRestart)
-document.querySelector("#potion_container")
-.addEventListener("animationiteration", potionRestart)
+  //Skifter position når de er ude af skærmen
+  document.querySelector("#mob1_container")
+    .addEventListener("animationiteration", mobRestart)
+  document.querySelector("#mob2_container")
+    .addEventListener("animationiteration", mobRestart)
+  document.querySelector("#mob3_container")
+    .addEventListener("animationiteration", mobRestart)
+  document.querySelector("#human_container")
+    .addEventListener("animationiteration", mobRestart)
+  document.querySelector("#potion_container")
+    .addEventListener("animationiteration", potionRestart)
 }
 
 function resetPoints() {
@@ -94,11 +94,11 @@ function startPositionPotion() {
 }
 
 function registerClick() {
-document.querySelector("#mob1_container").addEventListener("click", mobClicked);
-document.querySelector("#mob2_container").addEventListener("click", mobClicked);
-document.querySelector("#mob3_container").addEventListener("click", mobClicked);
-document.querySelector("#human_container").addEventListener("click", humanClicked);
-document.querySelector("#potion_container").addEventListener("click", potionClicked);
+  document.querySelector("#mob1_container").addEventListener("click", mobClicked);
+  document.querySelector("#mob2_container").addEventListener("click", mobClicked);
+  document.querySelector("#mob3_container").addEventListener("click", mobClicked);
+  document.querySelector("#human_container").addEventListener("click", humanClicked);
+  document.querySelector("#potion_container").addEventListener("click", potionClicked);
 }
 
 //JS for enemies
@@ -127,7 +127,7 @@ function mobGone() {
   mobRestart.call(this);
   mob.addEventListener("click", mobClicked)
 }
-function mobRestart(){ 
+function mobRestart() {
 
   let mob = this;
 
@@ -135,9 +135,9 @@ function mobRestart(){
   mob.offsetWidth;
   mob.classList.add("run");
   mob.classList
-  .remove("position1", "position2", "position3", "position4");
+    .remove("position1", "position2", "position3", "position4");
 
-  let pos = Math.floor(Math.random()*4)+1;
+  let pos = Math.floor(Math.random() * 4) + 1;
   mob.classList.add("position" + pos)
 }
 
@@ -150,7 +150,7 @@ function humanClicked() {
   human.classList.add("paused")
   human.querySelector("img").classList.add("fly_heaven")
   human.addEventListener("animationend", humanGone)
-    
+
   document.querySelector("#sound_hit_human").volume = 1
   document.querySelector("#sound_hit_human").play()
   document.querySelector("#sound_hit_human").currentTime = 0
@@ -165,7 +165,7 @@ function humanGone() {
   humanRestart.call(this)
   human.addEventListener("click", humanClicked)
 }
-function humanRestart() { 
+function humanRestart() {
 
   let human = this;
 
@@ -173,28 +173,28 @@ function humanRestart() {
   human.offsetWidth;
   human.classList.add("run");
   human.classList
-  .remove("position1", "position2", "position3", "position4");
+    .remove("position1", "position2", "position3", "position4");
   human.classList.remove("paused")
 
-  let pos = Math.floor(Math.random()*4)+1;
+  let pos = Math.floor(Math.random() * 4) + 1;
   human.classList.add("position" + pos)
 }
 
 //JS for health potion
 function potionClicked() {
-console.log("Potion clicked");
+  console.log("Potion clicked");
 
-let potion = this
-potion.removeEventListener("click", potionClicked)
-potion.classList.add("paused")
-potion.querySelector("img").classList.add("zoom_out")
-potion.addEventListener("animationend", potionGone)
+  let potion = this
+  potion.removeEventListener("click", potionClicked)
+  potion.classList.add("paused")
+  potion.querySelector("img").classList.add("zoom_out")
+  potion.addEventListener("animationend", potionGone)
 
-document.querySelector("#sound_potion").volume = 0.5
-document.querySelector("#sound_potion").play()
-document.querySelector("#sound_potion").currentTime = 0
+  document.querySelector("#sound_potion").volume = 0.5
+  document.querySelector("#sound_potion").play()
+  document.querySelector("#sound_potion").currentTime = 0
 
-increaseLives()
+  increaseLives()
 }
 
 function potionGone() {
@@ -207,16 +207,16 @@ function potionGone() {
   potion.addEventListener("click", potionClicked)
 }
 
-function potionRestart() { 
+function potionRestart() {
   let potion = this;
 
   potion.classList.remove("falling");
   potion.offsetWidth;
   potion.classList.add("falling");
   potion.classList
-  .remove("potion_position1", "potion_position2", "potion_position3", "potion_position4", "potion_position5", "potion_position6", "potion_position7", "potion_position8");
+    .remove("potion_position1", "potion_position2", "potion_position3", "potion_position4", "potion_position5", "potion_position6", "potion_position7", "potion_position8");
 
-  let pos = Math.floor(Math.random()*8)+1;
+  let pos = Math.floor(Math.random() * 8) + 1;
   potion.classList.add("potion_position" + pos)
 }
 
@@ -228,7 +228,7 @@ function increasePoint() {
 
   if (points >= 10) {
     levelComplete();
-}
+  }
 
 }
 
@@ -254,7 +254,7 @@ function showDecreasedLives() {
 //Increase liv funktioner
 function increaseLives() {
   lives++;
-showIncreasedLives()
+  showIncreasedLives()
 }
 function showIncreasedLives() {
   document.querySelector("#heart" + lives).classList.remove("broken_heart");
@@ -266,12 +266,12 @@ function gameOver() {
   console.log("Game Over!");
   document.querySelector("#game_over").classList.remove("hidden");
 
-  
+
   document.querySelector("#sound_gameOver").volume = 0.5
   document.querySelector("#sound_gameOver").play()
   document.querySelector("#sound_gameOver").currentTime = 0
 
-stopGame()
+  stopGame()
 
 }
 

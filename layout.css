@@ -44,6 +44,7 @@ h2 {
     font-size: 2.7em;
     font-family: 'Rampart One', cursive;
 }
+
 h3 {
     position: absolute;
     color: f7f0d1;
@@ -52,6 +53,7 @@ h3 {
     left: 42.5%;
     font-family: 'Caveat', cursive;
 }
+
 h6 {
     position: absolute;
     color: f7f0d1;
@@ -67,28 +69,32 @@ h6 {
     top: 18%;
     right: 41.2%;
     font-size: 0.9em;
-    font-family: 'Russo One', sans-serif;}
+    font-family: 'Russo One', sans-serif;
+}
 
 #menu1_img {
-    position:absolute;
+    position: absolute;
     top: 8%;
     right: 57%;
     scale: 120%;
 }
+
 #menu2_img {
-    position:absolute;
+    position: absolute;
     top: 9.3%;
     right: 54%;
     scale: 100%;
 }
+
 #menu3_img {
-    position:absolute;
+    position: absolute;
     top: 10%;
     right: 52%;
     scale: 100%;
 }
+
 #menu4_img {
-    position:absolute;
+    position: absolute;
     top: 11%;
     right: 42%;
     scale: 150%;
@@ -138,7 +144,7 @@ h6 {
     text-align: right;
     font-size: 2.5em;
     font-family: 'Press Start 2P', cursive;
-    color:white;
+    color: white;
 }
 
 #life_board {
@@ -283,7 +289,7 @@ h4 {
 }
 
 #potion_sprite {
-width: 100%;
+    width: 100%;
 }
 
 
@@ -306,6 +312,3 @@ width: 100%;
 #level_complete.hidden {
     display: none;
 }
-
-
-
