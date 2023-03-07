@@ -53,19 +53,15 @@ function resetPoints() {
 }
 
 function resetLives() {
-  lives = 5
+  lives = 3
   //fjerner alle hearts
   document.querySelector("#heart1").classList.remove("broken_heart");
   document.querySelector("#heart2").classList.remove("broken_heart");
   document.querySelector("#heart3").classList.remove("broken_heart");
-  document.querySelector("#heart4").classList.remove("broken_heart");
-  document.querySelector("#heart5").classList.remove("broken_heart");
   //tilføjer alle hearts
   document.querySelector("#heart1").classList.add("active_heart");
   document.querySelector("#heart2").classList.add("active_heart");
   document.querySelector("#heart3").classList.add("active_heart");
-  document.querySelector("#heart4").classList.add("active_heart");
-  document.querySelector("#heart5").classList.add("active_heart");
 
 }
 
@@ -94,11 +90,11 @@ function startPositionPotion() {
 }
 
 function registerClick() {
-  document.querySelector("#mob1_container").addEventListener("click", mobClicked);
-  document.querySelector("#mob2_container").addEventListener("click", mobClicked);
-  document.querySelector("#mob3_container").addEventListener("click", mobClicked);
-  document.querySelector("#human_container").addEventListener("click", humanClicked);
-  document.querySelector("#potion_container").addEventListener("click", potionClicked);
+  document.querySelector("#mob1_container").addEventListener("mousedown", mobClicked);
+  document.querySelector("#mob2_container").addEventListener("mousedown", mobClicked);
+  document.querySelector("#mob3_container").addEventListener("mousedown", mobClicked);
+  document.querySelector("#human_container").addEventListener("mousedown", humanClicked);
+  document.querySelector("#potion_container").addEventListener("mousedown", potionClicked);
 }
 
 //JS for enemies
